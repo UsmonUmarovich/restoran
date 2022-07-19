@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { createUser } from "../services/user.service.js";
 
 const router = Router();
 
@@ -7,8 +8,9 @@ router.get("/register", (req, res) => {
 });
 
 router.post("/register", (req, res) => {
-    console.log(req.body)
-    res.send("Register")
+    const {name, surname, username, password} = req.body
+    createUser(name, surname, username, password)
+    res.send("👍")
 })
 
 export default router;
