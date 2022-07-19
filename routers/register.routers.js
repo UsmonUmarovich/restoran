@@ -1,9 +1,14 @@
 import { Router } from "express";
 
-const registerRouters = Router();
+const router = Router();
 
-registerRouters.get("/register", (req, res) => {
+router.get("/register", (req, res) => {
   res.render("register");
 });
 
-export default registerRouters;
+router.post("/register", (req, res) => {
+    console.log(req.body)
+    res.send("Register")
+})
+
+export default router;
