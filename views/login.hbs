@@ -1,8 +1,12 @@
-<div class="h-screen flex flex-col gap-3 w-96">
+<form
+    action="/login"
+    method="post"
+    class="h-screen flex flex-col gap-3 max-w-xs mx-auto justify-center items-center">
 
-    <input type="text" placeholder="Username" class="input input-bordered w-full max-w-xs" />
-    <input type="password" placeholder="Password" class="input input-bordered w-full max-w-xs" />
+    <h1 class="text-2xl text-neutral-300 p-4">Login</h1>
+
+    <input name="username" type="text" placeholder="Username" class="input input-bordered w-full max-w-xs" />
+    <input name="password" type="password" placeholder="Password" class="input input-bordered w-full max-w-xs" />
 
     <button class="btn btn-primary w-full"> Login </button>
-</div>
-
+</form>

@@ -7,6 +7,15 @@ const users = new Datastore({
 
 users.loadDatabase((err) => console.log(err))
 
+// username boyicha foydalanuvchini qidirish
+export function findUser(username, callback) {
+    
+    users.findOne({ username }, (err, user) => {
+        callback(user)
+    })
+    
+}
+
 export function createUser(name, surname, username, password) {
     const doc = {
         name,
