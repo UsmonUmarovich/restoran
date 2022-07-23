@@ -1,7 +1,8 @@
 import express from "express"
 import cors from "cors"
 import { engine } from "express-handlebars"
-import router from "./routers/register.routers.js"
+import RegisterRouter from "./routers/register.routers.js"
+import LoginRouter from "./routers/login.routers.js"
 
 const app = express()
 
@@ -13,8 +14,9 @@ app.engine(".hbs", engine({ extname: ".hbs" }))
 app.set("view engine", ".hbs")
 app.set("views", "./views")
 
-app.use(router)
+app.use(RegisterRouter)
+app.use(LoginRouter)
 
-app.listen(8080, (req, res) => {
+app.listen(8080, () => {
     console.log("Server is running on http://localhost:8080")
 })

@@ -1,16 +1,16 @@
 import { Router } from "express";
 import { createUser } from "../services/user.service.js";
 
-const router = Router();
+const RegisterRouter = Router();
 
-router.get("/register", (req, res) => {
+RegisterRouter.get("/register", (req, res) => {
   res.render("register");
 });
 
-router.post("/register", (req, res) => {
+RegisterRouter.post("/register", (req, res) => {
     const {name, surname, username, password} = req.body
     createUser(name, surname, username, password)
-    res.send("👍")
+    res.redirect("/login")
 })
 
-export default router;
+export default RegisterRouter;
