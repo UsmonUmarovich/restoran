@@ -10,7 +10,7 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res) => {
     const { name, surname, username, password } = req.body
     createUser(name, surname, username, password)
-    res.send('register')
+    res.redirect('/login')
 })
 
 export default router

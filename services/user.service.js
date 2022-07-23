@@ -16,6 +16,13 @@ export function findUser(username, callback) {
     
 }
 
+// barcha foydalanuvchilar
+export function allUsers(callback) {
+    users.find({}, (err, users) => {
+        callback(users)
+    })
+}
+
 export function createUser(name, surname, username, password) {
     const doc = {
         name,

@@ -19,7 +19,7 @@ router.post('/login', (req, res) => {
             res.send('<h1 style="color: red"> Username or password is wrong </h1>')
         }
         else {
-            res.send('<h1 style="color: yellowgreen"> Successfuly login. </h1>')
+            res.redirect('/users')
         }
     })
 })
