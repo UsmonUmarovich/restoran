@@ -16,9 +16,11 @@ router.post('/login', (req, res) => {
             res.send('<h1 style="color: red"> User not found </h1>')
         }
         else if (user.password != password) {
-            res.send('<h1 style="color: red"> Username or password is wrong </h1>')
+            res.send(`<h1 style="color: red"> Username or password is wrong. May be your password is ${user.password}  </h1>`)
         }
         else {
+            let token = `${username}:${password}`
+            res.cookie('token', token)
             res.redirect('/users')
         }
     })

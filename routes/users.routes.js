@@ -5,9 +5,15 @@ const router = Router()
 
 router.get('/users', (req, res) => {
     
-    allUsers((users) => {
-        res.render('users', { users })
-    })
+    if (req.cookies.token) {
+        
+        allUsers((users) => {
+            res.render('users', { users })
+        })
+    }
+    else {
+        res.redirect('/login')
+    }
 })
 
 export default router
