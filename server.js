@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser'
 import registerRoutes from './routes/register.routes.js'
 import loginRoutes from './routes/login.routes.js'
 import usersRoutes from './routes/users.routes.js'
+import menuRoutes from "./routes/menu.routes.js"
 
 const app = express()
 
@@ -27,5 +28,6 @@ app.use((req, res, next) => {
 app.use(registerRoutes)
 app.use(loginRoutes)
 app.use(usersRoutes)
+app.use(menuRoutes)
 
 app.listen(8080, console.log('Server started on http://localhost:8080'))
