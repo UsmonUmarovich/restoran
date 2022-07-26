@@ -14,6 +14,7 @@ const menu = new Datastore({
     filename: "./datastore/menu.json",
     autoload: true
 })
+
 menu.loadDatabase()
 
 export function createFood(name, price, ingredients, image) {
