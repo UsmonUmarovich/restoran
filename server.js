@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: true }))
 app.engine('.hbs', engine({ extname: '.hbs' }))
 app.set('view engine', '.hbs')
 app.set('views', './views')
+app.use(express.static("public"))
 
 app.use((req, res, next) => {
     console.log(req.method + ' \'' + req.originalUrl + '\' body: ' + req.body);
